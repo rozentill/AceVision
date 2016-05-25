@@ -61,7 +61,15 @@
         </div>
 
         <div class="search-input" style="width:60%;margin:0 auto">
-          <input type="text" class="form-control" id="search" onchange="interpret()" placeholder="Enter anything related to academia" style="height:40px">
+          <div class="dropdown">
+            <input type="text" class="form-control" id="search" onchange="interpret()" data-toggle="dropdown" placeholder="Enter anything related to academia" style="height:40px">
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li class="search-dropdown-item"><b>Field :</b>Machine Learning</li>
+              <li class="search-dropdown-item"><b>Author :</b>Machine Learning</li>
+              <li class="search-dropdown-item"><b>Paper :</b>Machine Learning</li>
+            </ul>
+          </div>
+
           <!-- <button type="button" class="btn btn-default" aria-label="Left Align">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button> -->
