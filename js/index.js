@@ -13,11 +13,11 @@ $(document).ready(function () {
     //circleColor: use @default
     data: {
       items: [
-        {text: "Java", count: "236"},
-        {text: ".Net", count: "382"},
-        {text: "Php", count: "170"},
-        {text: "Ruby", count: "123"},
-        {text: "D", count: "12"},
+        {text: "MSRA", count: "236"},
+        {text: "IBM Research", count: "382"},
+        {text: "SJTU", count: "170"},
+        {text: "FDU", count: "123"},
+        {text: "THU", count: "12"},
         {text: "Python", count: "170"},
         {text: "C/C++", count: "382"},
         {text: "Pascal", count: "10"},
@@ -41,7 +41,7 @@ $(document).ready(function () {
           },
           attr: {dy: "65px"},
           centralClick: function() {
-            alert("Here is more details!!");
+            // alert("Here is more details!!");
           }
         }
       },
