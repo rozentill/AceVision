@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-
+    <script type="text/javascript">
+      var conference_name = 'AAAI'
+      // var field_name = getevaluate()
+    </script>
     <script src="js/d3.min.js"></script>
     <title>Ace Vision</title>
 
@@ -32,7 +35,6 @@
     <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
     <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
     <!-- <script src="index.js"></script> -->
-    <script type="text/javascript" src="js/field.js"></script>
     <script src="js/index.js"></script>
     <style>
       .bubbleChart {
@@ -66,25 +68,23 @@
 
 
       <div class="field-title">
-        <h1>
-          <!-- <script type="text/javascript"> -->
-            <p class="text-muted" id="mainname"></p>
-            <!-- // document.write(field_name) -->
-          <!-- // </script> -->
-        </h1>
+        <h1><p class="text-muted">
+          <script type="text/javascript">
+            document.write(field_name)
+          </script>
+        </p></h1>
       </div>
 
       <div class="field-info">
         <p class="text-muted">
           <script type="text/javascript">
-            if (field_name=="Machine Learning") {
-              document.write("Machine learning is a subfield of computer science that evolved from the study of pattern recognition and computational learning theory in artificial intelligence. In 1959, Arthur Samuel defined machine learning as a \"Field of study that gives computers the ability to learn without being explicitly programmed\". Machine learning explores the study and construction of algorithms that can learn from and make predictions on data. Such algorithms operate by building a model from example inputs in order to make data-driven predictions or decisions expressed as outputs, rather than following strictly static program instructions.")
+            if (field_name=="AAAI") {
+              document.write("The Association for the Advancement of Artificial Intelligence (AAAI) is an international, nonprofit, scientific society devoted to promote research in, and responsible use of, artificial intelligence. AAAI also aims to increase public understanding of artificial intelligence (AI), improve the teaching and training of AI practitioners, and provide guidance for research planners and funders concerning the importance and potential of current AI developments and future directions.")
             }
-            else if (field_name=="Data Mining") {
-              document.write("Data mining is an interdisciplinary subfield of computer science. It is the computational process of discovering patterns in large data sets involving methods at the intersection of artificial intelligence, machine learning, statistics, and database systems. The overall goal of the data mining process is to extract information from a data set and transform it into an understandable structure for further use. Aside from the raw analysis step, it involves database and data management aspects, data pre-processing, model and inference considerations, interestingness metrics, complexity considerations, post-processing of discovered structures, visualization, and online updating. Data mining is the analysis step of the \"knowledge discovery in databases\" process, or KDD.")
-            }
+            else if (field_name=="ICML") {
+              document.write("The International Conference on Machine Learning (ICML) is the leading international academic conference in machine learning, attracting annually more than 2000 participants from all over the world. It is supported by the International Machine Learning Society (IMLS). The conference attracts leading innovations in the field of machine learning. ICML is a top tier conference, and is one of the two most impactful conferences in Machine Learning (along with Conference on Neural Information Processing Systems).")
             else {
-              document.write("Computer vision is a field that includes methods for acquiring, processing, analyzing, and understanding images and, in general, high-dimensional data from the real world in order to produce numerical or symbolic information, e.g., in the forms of decisions. A theme in the development of this field has been to duplicate the abilities of human vision by electronically perceiving and understanding an image. Understanding in this context means the transformation of visual images (the input of retina) into descriptions of world that can interface with other thought processes and elicit appropriate action. This image understanding can be seen as the disentangling of symbolic information from image data using models constructed with the aid of geometry, physics, statistics, and learning theory. Computer vision has also been described as the enterprise of automating and integrating a wide range of processes and representations for vision perception.")
+              document.write("VLDB is an annual conference held by the non-profit Very Large Data Base Endowment Inc. The mission of VLDB is to promote and exchange scholarly work in databases and related fields throughout the world. The VLDB conference began in 1975 and is now closely associated with SIGMOD and SIGKDD.")
             }
           </script>
         </p>
