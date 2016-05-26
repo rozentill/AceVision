@@ -13,16 +13,15 @@ $(document).ready(function () {
     //circleColor: use @default
     data: {
       items: [
-        {text: figure_af[0]['name'], count: figure_af[0]['num']},
-        {text: figure_af[1]['name'], count: figure_af[1]['num']},
-        {text: figure_af[2]['name'], count: figure_af[2]['num']},
-        {text: figure_af[3]['name'], count: figure_af[3]['num']},
-        {text: figure_af[4]['name'], count: figure_af[4]['num']},
-        {text: figure_af[5]['name'], count: figure_af[5]['num']},
-        {text: figure_af[6]['name'], count: figure_af[6]['num']},
-        {text: figure_af[7]['name'], count: figure_af[7]['num']},
-        {text: figure_af[8]['name'], count: figure_af[8]['num']},
-        {text: figure_af[9]['name'], count: figure_af[9]['num']}
+        {text: "MSRA", count: "236"},
+        {text: "IBM Research", count: "382"},
+        {text: "SJTU", count: "170"},
+        {text: "FDU", count: "123"},
+        {text: "THU", count: "12"},
+        {text: "Python", count: "170"},
+        {text: "C/C++", count: "382"},
+        {text: "Pascal", count: "10"},
+        {text: "Something", count: "170"},
       ],
       eval: function (item) {return item.count;},
       classed: function (item) {return item.text.split(" ").join("");}

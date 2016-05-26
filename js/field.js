@@ -7,7 +7,7 @@
 // }
 
 var figure_af = new Array(10);
-for each(var af in affiliation){
+for (var af in affiliation){
   var dic = new Array();
   dic['name'] = af;
   dic['num'] = affiliation[af].Gindex;
