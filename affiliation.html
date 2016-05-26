@@ -7,6 +7,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Ace Vision</title>
     <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script src="http://phuonghuynh.github.io/js/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <link href="./css/bootstrap.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="./css/acevision.css"  type="text/css">
@@ -52,14 +53,23 @@
           Shanghai Jiao Tong University
         </p></h1>
       </div>
+        <script src="./js/getapi.js" type="text/javascript"></script>
+        <script>
+            var json1;
+            var paper=[];
+            var year=[],field=[],author=[],affiliation=[],journal=[],conference=[];
+            var sarray=[];
+            window.onload=myonload(4);
+        </script>
       <div class="affiliation-left" style="width:30%;float:left">
         <h4><p class="text-muted">
           Professor List
-        </p></h5>
+        </p></h4>
         <table style="margin-top:30px" class="table table-hover">
           <th>Rank</th>
           <th>Name</th>
           <th>Citations</th>
+<!--
           <tr>
             <td>1</td>
             <td>Zhihua Zhou</td>
@@ -160,23 +170,29 @@
             <td>Zhihua Zhou</td>
             <td>10000</td>
           </tr>
-        </table>
+-->
         <script type="text/javascript">
-          var af_au = Array(20);
+          var af_au = new Array(20);
           var i = 0;
           for (var au in author) {
+            if(i==20)break;
+            af_au[i]=new Object();
             af_au[i].name = au;
             af_au[i].citation = author[au].Gindex;
 
-            trow = document.getElementsByTagName('tr')[i];
-
-            trow.getElementsByTagName('td')[0].innerHTML = i+1;
-            trow.getElementsByTagName('td')[1].innerHTML = af_au[i].name;
-            trow.getElementsByTagName('td')[2].innerHTML = af_au[i].citation;
+            document.write("<tr><td>");
+              document.write(i+1);
+              document.write("</td><td>");
+            document.write(af_au[i].name);
+            document.write("</td><td>");
+            document.write(af_au[i].citation);
+            document.write("</td></tr>");
             i++;
           }
 
         </script>
+        </table>
+
       </div>
       <div class="affiliation-right">
         <div class="affiliation-paper">
@@ -285,7 +301,8 @@
                     type:'line',
                     stack: '总量',
                     areaStyle: {normal: {}},
-                    data:[year[2009].totnumber, year[2010].totnumber, year[2011].totnumber, year[2012].totnumber, year[2013].totnumber, year[2014].totnumber,year[2015].totnumber]
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                //    data:[year["2009"].totnumber, year["2010"].totnumber, year["2011"].totnumber, year["2012"].totnumber, year["2013"].totnumber, year["2014"].totnumber,year["2015"].totnumber]
                 }
                 // {
                 //     name:'联盟广告',
@@ -323,6 +340,11 @@
                 // }
             ]
             };
+            /*  for(i=1999;i<2017;i++)
+                  if(year[i.toString]!=undefined) {
+                      alert(year[i].totnumber);
+                    option.series[0].data.push(year[i].totnumber);
+                  }*/
 
                 // 使用刚指定的配置项和数据显示图表。
                 myChart.setOption(option);
@@ -424,7 +446,6 @@
     ]
 };
 
-
                 // 使用刚指定的配置项和数据显示图表。
                 myChart.setOption(option);
           </script>
@@ -437,10 +458,8 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="./js/bootstrap.js" type="text/javascript"></script>
-    <script src="./js/getapi.js" type="text/javascript"></script>
 
   </body>
 </html>

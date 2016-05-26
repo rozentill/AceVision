@@ -32,8 +32,21 @@
     <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/central-click/central-click.js"></script>
     <script src="http://phuonghuynh.github.io/js/bower_components/bubble-chart/src/plugins/lines/lines.js"></script>
     <!-- <script src="index.js"></script> -->
-    <script type="text/javascript" src="js/field.js"></script>
-    <script src="js/index.js"></script>
+      
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
     <style>
       .bubbleChart {
         min-width: 100px;
@@ -67,15 +80,24 @@
 
       <div class="field-title">
         <h1>
-          <!-- <script type="text/javascript"> -->
-            <p class="text-muted" id="mainname"></p>
-            <!-- // document.write(field_name) -->
-          <!-- // </script> -->
+          <p class="text-muted" id="mainname"></p>
+
+          <script type="text/javascript"> 
+              field_name=document.getElementById('mainname').innerHTML;
+         </script>
         </h1>
       </div>
+              <script src="./js/getapi.js" type="text/javascript"></script>
+    <script>
+        var json1;
+        var paper=[];
+        var year=[],field=[],author=[],affiliation=[],journal=[],conference=[];
+        var sarray=[];
+        window.onload=myonload(2);
+    </script>
 
       <div class="field-info">
-        <p class="text-muted">
+        <p class="text-muted" style="text-align:justify">
           <script type="text/javascript">
             if (field_name=="Machine Learning") {
               document.write("Machine learning is a subfield of computer science that evolved from the study of pattern recognition and computational learning theory in artificial intelligence. In 1959, Arthur Samuel defined machine learning as a \"Field of study that gives computers the ability to learn without being explicitly programmed\". Machine learning explores the study and construction of algorithms that can learn from and make predictions on data. Such algorithms operate by building a model from example inputs in order to make data-driven predictions or decisions expressed as outputs, rather than following strictly static program instructions.")
@@ -105,56 +127,25 @@
               <th>Rank</th>
               <th>Name</th>
               <th>Citations</th>
-              <tr>
-                <td>1</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td>Zhihua Zhou</td>
-                <td>10000</td>
-              </tr>
+                     <script type="text/javascript">
+          var af_au = new Array(10);
+          var i = 0;
+          for (var au in author) {
+            if(i==10)break;
+            af_au[i]=new Object();
+            af_au[i].name = au;
+            af_au[i].citation = author[au].Gindex;
+
+            document.write("<tr><td>");
+              document.write(i+1);
+              document.write("</td><td>");
+            document.write(af_au[i].name);
+            document.write("</td><td>");
+            document.write(af_au[i].citation);
+            document.write("</td></tr>");
+            i++;
+          }
+                </script>
             </table>
           </div>
         </div>
@@ -188,56 +179,25 @@
             <th>Rank</th>
             <th>Name</th>
             <th>Citations</th>
-            <tr>
-              <td>1</td>
-              <td>MSRA</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>IBM Research</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Zhihua Zhou</td>
-              <td>10000</td>
-            </tr>
+                        <script type="text/javascript">
+          var af_au = new Array(10);
+          var i = 0;
+          for (var au in author) {
+            if(i==10)break;
+            af_au[i]=new Object();
+            af_au[i].name = au;
+            af_au[i].citation = 0;
+
+            document.write("<tr><td>");
+              document.write(i+1);
+              document.write("</td><td>");
+            document.write(af_au[i].name);
+            document.write("</td><td>");
+            document.write(af_au[i].citation);
+            document.write("</td></tr>");
+            i++;
+          }
+                </script>
           </table>
         </div>
       </div>
@@ -252,7 +212,122 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
     <script src="./js/bootstrap.js" type="text/javascript"></script>
-    <script src="./js/getapi.js" type="text/javascript"></script>
 
+    
+        <script>
+      
+figure_af = new Array(10);
+var i = 0;
+for (af in affiliation){
+    i++;
+  figure_af[i-1] = new Object();
+  figure_af[i-1].arg1 = af;
+  figure_af[i-1].arg2 = affiliation[af].Gindex;
+if(i==10)break;
+}
+      </script> 
+      
+      <script>
+      $(document).ready(function () {
+  var bubbleChart = new d3.svg.BubbleChart({
+    supportResponsive: true,
+    //container: => use @default
+    size: 600,
+    //viewBoxSize: => use @default
+    innerRadius: 600 / 3.5,
+    //outerRadius: => use @default
+    radiusMin: 50,
+    //radiusMax: use @default
+    //intersectDelta: use @default
+    //intersectInc: use @default
+    //circleColor: use @default
+    data: {
+      items: [
+        {text: figure_af[0].arg1, count: figure_af[0].arg2},
+        {text: figure_af[1].arg1, count: figure_af[1].arg2},
+        {text: figure_af[2].arg1, count: figure_af[2].arg2},
+        {text: figure_af[3].arg1, count: figure_af[3].arg2},
+        {text: figure_af[4].arg1, count: figure_af[4].arg2},
+        {text: figure_af[5].arg1, count: figure_af[5].arg2},
+        {text: figure_af[6].arg1, count: figure_af[6].arg2},
+        {text: figure_af[7].arg1, count: figure_af[7].arg2},
+        {text: figure_af[8].arg1, count: figure_af[8].arg2}
+//        {text: figure_af[9].arg1, count: figure_af[9].arg2}
+      ],
+      eval: function (item) {return item.count;},
+      classed: function (item) {return item.text.split(" ").join("");}
+    },
+    plugins: [
+      {
+        name: "central-click",
+        options: {
+          text: "(See more detail)",
+          style: {
+            "font-size": "12px",
+            "font-style": "italic",
+            "font-family": "Source Sans Pro, sans-serif",
+            //"font-weight": "700",
+            "text-anchor": "middle",
+            "fill": "white"
+          },
+          attr: {dy: "65px"},
+          centralClick: function() {
+            // alert("Here is more details!!");
+          }
+        }
+      },
+      {
+        name: "lines",
+        options: {
+          format: [
+            {// Line #0
+              textField: "count",
+              classed: {count: true},
+              style: {
+                "font-size": "28px",
+                "font-family": "Source Sans Pro, sans-serif",
+                "text-anchor": "middle",
+                fill: "white"
+              },
+              attr: {
+                dy: "0px",
+                x: function (d) {return d.cx;},
+                y: function (d) {return d.cy;}
+              }
+            },
+            {// Line #1
+              textField: "text",
+              classed: {text: true},
+              style: {
+                "font-size": "14px",
+                "font-family": "Source Sans Pro, sans-serif",
+                "text-anchor": "middle",
+                fill: "white"
+              },
+              attr: {
+                dy: "20px",
+                x: function (d) {return d.cx;},
+                y: function (d) {return d.cy;}
+              }
+            }
+          ],
+          centralFormat: [
+            {// Line #0
+              style: {"font-size": "50px"},
+              attr: {}
+            },
+            {// Line #1
+              style: {"font-size": "30px"},
+              attr: {dy: "40px"}
+            }
+          ]
+        }
+      }]
+  });
+});
+
+      
+      
+      </script>
   </body>
 </html>

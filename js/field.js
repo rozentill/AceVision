@@ -7,9 +7,12 @@
 // }
 
 var figure_af = new Array(10);
-for (var af in affiliation){
+var i = 0;
+for (af in affiliation){
+    i++;
   var dic = new Array();
   dic['name'] = af;
   dic['num'] = affiliation[af].Gindex;
   figure_af.push(dic);
+if(i==10)break;
 }
