@@ -63,7 +63,7 @@
     <nav class="navbar navbar-default" role="navigation" style="padding:0 0">
       <div class="container-fluid bg-success" style="padding:0 10%">
     <div class="navbar-header" >
-        <a class="navbar-brand" href="#">Ace Vision</a>
+        <a class="navbar-brand" href="index.html">Ace Vision</a>
      </div>
      <div >
         <ul class="nav navbar-nav" style="float:right">
@@ -94,6 +94,8 @@
         var year=[],field=[],author=[],affiliation=[],journal=[],conference=[];
         var sarray=[];
         window.onload=myonload(2);
+
+        
     </script>
 
       <div class="field-info">
@@ -128,22 +130,38 @@
               <th>Name</th>
               <th>Citations</th>
                      <script type="text/javascript">
+
+                         
+          sum=0;
+          a=[];
+          b=[];
+          for (var au in author){
+              sum++;
+              a[sum]=au;
+              b[sum]=author[au].Gindex;
+          }
+        //alert(sum);
+        for(i=1;i<=sum;i++)
+            for(j=i+1;j<=sum;j++) {
+                if(b[i]<b[j]) {
+                    t=a[i];a[i]=a[j];a[j]=t;
+                    t1=b[i];b[i]=b[j];b[j]=t1;
+                }
+            }
+
           var af_au = new Array(10);
-          var i = 0;
-          for (var au in author) {
-            if(i==10)break;
-            af_au[i]=new Object();
-            af_au[i].name = au;
-            af_au[i].citation = author[au].Gindex;
+          for (i=1;i<=10;i++) {
+            af_au[i-1]=new Object();
+            af_au[i-1].name = a[i];
+            af_au[i-1].citation = b[i];
 
             document.write("<tr><td>");
-              document.write(i+1);
+              document.write(i);
               document.write("</td><td>");
-            document.write(af_au[i].name);
+            document.write(af_au[i-1].name);
             document.write("</td><td>");
-            document.write(af_au[i].citation);
+            document.write(af_au[i-1].citation);
             document.write("</td></tr>");
-            i++;
           }
                 </script>
             </table>
@@ -179,23 +197,39 @@
             <th>Rank</th>
             <th>Name</th>
             <th>Citations</th>
-                        <script type="text/javascript">
+<script type="text/javascript">
+          sum=0;
+          a=[];
+          b=[];
+          for (var au in affiliation){
+              sum++;
+              a[sum]=au;
+              b[sum]=affiliation[au].Gindex;
+                if(au===undefined)sum--;
+
+          }
+        //alert(sum);
+        for(i=1;i<=sum;i++)
+            for(j=i+1;j<=sum;j++) {
+                if(b[i]<b[j]) {
+                    t=a[i];a[i]=a[j];a[j]=t;
+                    t1=b[i];b[i]=b[j];b[j]=t1;
+                }
+            }
+
           var af_au = new Array(10);
-          var i = 0;
-          for (var au in author) {
-            if(i==10)break;
-            af_au[i]=new Object();
-            af_au[i].name = au;
-            af_au[i].citation = 0;
+          for (i=1;i<=10;i++) {
+            af_au[i-1]=new Object();
+            af_au[i-1].name = a[i];
+            af_au[i-1].citation = b[i];
 
             document.write("<tr><td>");
-              document.write(i+1);
+              document.write(i);
               document.write("</td><td>");
-            document.write(af_au[i].name);
+            document.write(af_au[i-1].name);
             document.write("</td><td>");
-            document.write(af_au[i].citation);
+            document.write(af_au[i-1].citation);
             document.write("</td></tr>");
-            i++;
           }
                 </script>
           </table>

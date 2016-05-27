@@ -44,7 +44,7 @@
 <nav class="navbar navbar-default" role="navigation" style="padding:0 0">
     <div class="container-fluid bg-success" style="padding:0 10%">
         <div class="navbar-header" >
-            <a class="navbar-brand" href="#">Ace Vision</a>
+            <a class="navbar-brand" href="index.html">Ace Vision</a>
         </div>
         <div class="search-input" style="float: left;margin-top: 5px;margin-left:20px;width: 400px">
             <div class="dropdown" style="width: 70%;display: inline-block;vertical-align: middle">
@@ -428,7 +428,7 @@
         sum++;
     }
     for (i in paper[0].author){
-        str+="<a style=\"cursor:pointer;\"onclick='tiaozhuan("+paper[0].author[i]+",1)'>"+paper[0].author[i]+"</a>";
+        str+="<a style=\"cursor:pointer;\"onclick=\"tiaozhuan(\'"+paper[0].author[i]+"\',1)\">"+paper[0].author[i]+"</a>";
         sum--;
         if (sum != 0) str+=" , ";
     }

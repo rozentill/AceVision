@@ -47,9 +47,22 @@ function fromValueToName(myvalue,j) {
 
 function t(ind) {
     //location.href="www.baidu.com";
-    var pgp=document.getElementsByName("search-dropdown-item");
+
+    var pgli = document.getElementsByName("seli");
+    var pgp=document.getElementsByName("search-dropdown-item");  
+    if(ind==6){
+        for(i=0;i<6;i++) {
+            if(pgli[i].style.display!="none");
+            {
+                var tmpexpr=pgp[i].innerHTML;
+                tiaozhuan(tmpexpr,i);
+            }
+        }
+    }
+    else{
     var tmpexpr=pgp[ind].innerHTML;
     tiaozhuan(tmpexpr,ind);
+    }
 }
 
 function tiaozhuan(myexpr,ind) {
@@ -63,6 +76,7 @@ function tiaozhuan(myexpr,ind) {
     else {
         expr="Composite("+toType[ind]+"\'"+myexpr+"\')";
     }
+    //alert(expr);
     location.href=toName[ind]+expr;
 }
 
@@ -116,10 +130,10 @@ function getevaluate() {
     },
     error: function () {
         myjson="";
-        alert("error");
+        //alert("error");
     }
 });
-    alert(myjson);
+    //alert(myjson);
     return myjson;
 }
 

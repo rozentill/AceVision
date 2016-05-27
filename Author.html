@@ -32,7 +32,7 @@
 <nav class="navbar navbar-default" role="navigation" style="padding:0 0">
     <div class="container-fluid bg-success" style="padding:0 10%">
         <div class="navbar-header" >
-            <a class="navbar-brand" href="#">Ace Vision</a>
+            <a class="navbar-brand" href="index.html">Ace Vision</a>
         </div>
         <div class="search-input" style="float: left;margin-top: 5px;margin-left:20px;width: 400px">
             <div class="dropdown" style="width: 70%;display: inline-block;vertical-align: middle">
@@ -229,7 +229,7 @@
                 graph: graph,
                 nodeSelected: function(node){
                     console.log('Node selected: ' + JSON.stringify(node.data));
-                   // tiaozhuan(node.data.label,1);
+                    tiaozhuan(node.data.label,1);
                 }
             });
         });
@@ -240,17 +240,18 @@
 </div>
 <div class="col-lg-6">
     <div class="panel panel-default" >
-        <div class="panel-heading" style="font-size: 20px">
+        <div class="panel-heading" style="font-size: 20px;overflow:hidden">
            Paper
         </div>
         <table class="table" style="font-size: 10px;">
             <script>
                 for (i=0;i<paper.length;i++){
-                    document.write("<tr ><td><div style=\"width:550px\"><h4 style=\"font-size: 20px\">");
+                    document.write("<tr><td><div style=\"width:550px\"><h4 style=\"font-size: 20px\">");
                     document.write(paper[i].title);
                     document.write("</h4><p>");
                     for (j=0;j<paper[i].author.length;j++){
-                        document.write("<a onclick=\"tiaozhuan("+paper[i].author[j]+",1)\">"+paper[i].author[j]);
+                        document.write("<a onclick=\"tiaozhuan(\'"+paper[i].author[j]+"\',1)\">"+paper[i].author[j]);
+                        document.write("</a>");
                         if (j != paper[i].author.length - 1) document.write(" , ");
                     }
                     document.write("</p>");
